@@ -22,3 +22,15 @@ DELETE FROM Shippings
   WHERE shipping_id = 3;
   
 select * from shippings;
+
+#作業領域テーブルを用意して。DB登録後に結果を確認
+
+insert into event_temp1 values(
+  1000,
+  "歓迎会",
+  2023-06-10
+);
+
+select * from event_temp1;
+
+#検索で頻度高く利用されているカラムがDB上キーとして活用できているかを確認
