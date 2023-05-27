@@ -14,3 +14,11 @@ order by order_id asc;
 SELECT customer_id, sum(Orders.amount)
 FROM Orders
 group by Orders.customer_id;
+
+
+#配送データについて、エラーが出ていたレコードを手動対応後にコマンド側で結果が出るように
+
+DELETE FROM Shippings
+  WHERE shipping_id = 3;
+  
+select * from shippings;
