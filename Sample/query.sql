@@ -44,3 +44,11 @@ Where customer_id = 4;
 
 Update Orders set order_id = order_id + 1000;
 select * from Orders;
+
+
+#ゲーム内のアイテムデータを並び替えて、現在のトップデータを抽出する
+CREATE TABLE GameItem (
+   Id int not null,
+   Name    varchar(55) NOT null,
+   DataValue int   
+);
