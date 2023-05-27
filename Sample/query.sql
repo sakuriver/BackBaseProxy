@@ -34,3 +34,13 @@ insert into event_temp1 values(
 select * from event_temp1;
 
 #検索で頻度高く利用されているカラムがDB上キーとして活用できているかを確認
+
+Explain SELECT customer_id
+FROM Orders
+Where customer_id = 4;
+
+
+#idルール変更後に、変更したルールの更新情報を動作確認
+
+Update Orders set order_id = order_id + 1000;
+select * from Orders;
