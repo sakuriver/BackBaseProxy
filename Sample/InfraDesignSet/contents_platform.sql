@@ -1,3 +1,5 @@
+
+--platform creator or developers
 CREATE TABLE developers
 ( 
   id int(10) NOT NULL PRIMARY KEY, 
@@ -7,6 +9,18 @@ CREATE TABLE developers
   updated_datetime datetime
 )
  ENGINE=INNODB;
+
+-- login information
+CREATE TABLE developer_login_temp 
+(
+  developer_id int(10) PRIMARY KEY,
+  token_information varchar(255),
+  created_datetime datetime,
+  updated_datetime datetime
+)
+ENGINE=INNODB;
+
+-- platform products
 CREATE Table develop_products
 (
   id int(10) NOT NULL PRIMARY KEY,
@@ -21,7 +35,7 @@ CREATE Table develop_products
 )
 ENGINE=INNODB;
 
-
+-- platform test device
 CREATE TABLE test_device
 (
   id int(10) NOT NULL PRIMARY KEY,
