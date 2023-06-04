@@ -2,8 +2,21 @@
 CREATE TABLE admin_user 
 ( id int(10)PRIMARY KEY, 
  name varchar(255),
- grant_type int(10))
- ENGINE=INNODB;
+ grant_type int(10),
+ login_password varchar(255),
+ updated_datetime datetime
+)
+ENGINE=INNODB;
+
+-- login information
+CREATE TABLE login_tmp 
+(
+  admin_user_id int(10) PRIMARY KEY,
+  token_information varchar(255),
+  created_datetime datetime,
+  updated_datetime datetime
+)
+ENGINE=INNODB;
  
 --player_serverdb_sample
 CREATE TABLE player 
@@ -15,6 +28,7 @@ CREATE TABLE player
   updated_datetime datetime
 )
 ENGINE=INNODB;
+--player_purchase_information
 CREATE Table player_purchase
 (
   player_id int(10) NOT NULL,
@@ -25,7 +39,7 @@ CREATE Table player_purchase
   PRIMARY KEY(player_id, item_id)
 )
 ENGINE=INNODB;
-
+--master_data_version
 CREATE TABLE master_data_ver
 ( 
   id int(10) NOT NULL PRIMARY KEY, 
@@ -35,6 +49,7 @@ CREATE TABLE master_data_ver
   updated_datetime datetime
 )
  ENGINE=INNODB;
+ --store
 CREATE Table store
 (
   id int(10) NOT NULL PRIMARY KEY,
