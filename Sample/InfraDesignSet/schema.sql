@@ -1,6 +1,6 @@
---admin_serverdb_sample
+-- admin_serverdb_sample
 CREATE TABLE admin_user 
-( id int(10)PRIMARY KEY, 
+( id int(10) PRIMARY KEY, 
  name varchar(255),
  grant_type int(10),
  login_password varchar(255),
@@ -18,7 +18,7 @@ CREATE TABLE login_tmp
 )
 ENGINE=INNODB;
  
---player_serverdb_sample
+-- player_serverdb_sample
 CREATE TABLE player 
 ( 
   id int(10) NOT NULL PRIMARY KEY, 
@@ -28,7 +28,7 @@ CREATE TABLE player
   updated_datetime datetime
 )
 ENGINE=INNODB;
---player_purchase_information
+-- player_purchase_information
 CREATE Table player_purchase
 (
   player_id int(10) NOT NULL,
@@ -39,7 +39,7 @@ CREATE Table player_purchase
   PRIMARY KEY(player_id, item_id)
 )
 ENGINE=INNODB;
---master_data_version
+-- master_data_version
 CREATE TABLE master_data_ver
 ( 
   id int(10) NOT NULL PRIMARY KEY, 
@@ -49,7 +49,7 @@ CREATE TABLE master_data_ver
   updated_datetime datetime
 )
  ENGINE=INNODB;
- --store
+ -- store
 CREATE Table store
 (
   id int(10) NOT NULL PRIMARY KEY,
@@ -61,7 +61,23 @@ CREATE Table store
   index range_datetime(start_datetime, end_datetime)
 )
 ENGINE=INNODB;
-
+ -- payment_item
+CREATE Table payment_item
+(
+  id int(10) NOT NULL PRIMARY KEY,
+  name varchar(255) NOT NULL,
+  item_price int(10) NOT NULL,
+  add_value int(10),
+  campaign_value int(10),
+  campaign_start_datetime datetime,
+  campaign_end_datetime datetime,
+  start_datetime datetime,
+  end_datetime datetime,
+  created_datetime datetime,
+  updated_datetime datetime,
+  index range_datetime(start_datetime, end_datetime)
+)
+ENGINE=INNODB;
 
  
 
