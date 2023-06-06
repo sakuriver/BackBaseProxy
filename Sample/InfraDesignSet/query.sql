@@ -45,3 +45,24 @@ where admin_user_id = 1 and token_information = "kX3MNLka";
 select *
 from login_tmp
 where admin_user_id = 2 and token_information = "kX3MNLka";
+
+#ポイント商品情報を追加する。
+INSERT INTO payment_item (id, name, item_price,  start_datetime, end_datetime, created_datetime, updated_datetime )
+ VALUES(1, "通常ポイント100", 100,  now(), now(), now(), now());
+INSERT INTO payment_item (id, name, item_price,  start_datetime, end_datetime, created_datetime, updated_datetime )
+ VALUES(2, "通常ポイント300", 300,  now(), now(), now(), now());
+INSERT INTO payment_item (id, name, item_price,  start_datetime, end_datetime, created_datetime, updated_datetime )
+ VALUES(3, "通常ポイント500", 500,  now(), now(), now(), now());
+INSERT INTO payment_item (id, name, item_price, start_datetime, end_datetime, created_datetime, updated_datetime )
+ VALUES(4, "通常ポイント700+ボーナス100", 500,  now(), now(), now(), now());
+INSERT INTO payment_item (id, name, item_price, campaign_start_datetime, campaign_end_datetime, start_datetime, end_datetime, created_datetime, updated_datetime )
+ VALUES(5, "通常ポイント700+キャンペーン300 初回購入のみ", 500, now(), now(), now(), now(), now(), now());
+
+#ポイント商品ダイアログを開く（キャンペーンを含める)
+select * 
+from payment_item;
+
+
+#ポイント購入時に商品情報を選択する
+select * from payment_item 
+where id = 4;
