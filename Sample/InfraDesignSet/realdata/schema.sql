@@ -12,7 +12,7 @@ CREATE TABLE base_spot_data
 )
 ENGINE=INNODB;
 
-
+-- application_log_data
 CREATE TABLE base_log_data
 ( 
   id varchar(255) PRIMARY KEY, 
